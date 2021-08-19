@@ -1,16 +1,33 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, Button, FlatList } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
+  const links = [
+    "Components",
+    "List",
+    "Image"
+  ]
+
+  function renderListItem({item}) {
+    return (
+      <View style={styles.listItemStyle}>
+        <Button 
+          onPress={() => navigation.navigate(item)}
+          title={`Go to ${item} Demo`} 
+          />
+      </View>
+    )
+  }
+
   return (
     <View>
       <Text style={styles.text}>Hello World!</Text>
-      <Button 
-        onPress={() => navigation.navigate('Components')}
-        title="Go to Components Demo" />
-      <Button 
-        onPress={() => navigation.navigate('List')}
-        title="Go to List Demo" />
+      <FlatList
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item) => item}   
+            data={links} 
+            renderItem={renderListItem} 
+        />
     </View>
   )
 };
@@ -18,6 +35,9 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 30
+  },
+  listItemStyle: {
+    paddingBottom: 20
   }
 });
 
