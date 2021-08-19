@@ -6,20 +6,23 @@ const ImageScreen = () => {
     const images = [
         {
             title: "Forest",
-            image: require("../../assets/forest.jpg")
+            image: require("../../assets/forest.jpg"),
+            score: 10
         },
         {
             title: "Beach",
-            image: require("../../assets/beach.jpg")
+            image: require("../../assets/beach.jpg"),
+            score: 8
         },
         {
             title: "Mountain",
-            image: require("../../assets/mountain.jpg")
+            image: require("../../assets/mountain.jpg"),
+            score: 9
         },
     ]
 
     function renderImageDetail({item}) {
-        return <ImageDetail title={item.title} image={item.image} />
+        return <ImageDetail {...item}/>
     }
 
     return (
