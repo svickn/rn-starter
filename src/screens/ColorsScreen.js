@@ -1,9 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, View, Button, FlatList } from 'react-native';
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+import { getRandomInt } from '../utils';
 
 const ColorsScreen = () => {
     const [colors, setColors] = React.useState([])

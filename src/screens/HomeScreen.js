@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Button, FlatList } from "react-native";
 import screens from "../data/Screens";
 
 const HomeScreen = ({ navigation }) => {
-  const links = Object.keys(screens).filter(o => o !== "Home")
+  const links = Object.keys(screens)
 
   function renderListItem({item}) {
     return (
