@@ -7,6 +7,7 @@ import SquareScreen from '../screens/SquareScreen'
 import SquareReducerScreen from '../screens/SquareReducerScreen'
 import CounterReducerScreen from '../screens/CounterReducerScreen'
 import TextScreen from '../screens/TextScreen'
+import BoxScreen from '../screens/BoxScreen'
 
 const screens = {
   Components: ComponentsScreen,
@@ -18,6 +19,7 @@ const screens = {
   Square: SquareScreen,
   SquareReducer: SquareReducerScreen,
   Text: TextScreen,
+  Box: BoxScreen,
 }
 
 export default screens
