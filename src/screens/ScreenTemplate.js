@@ -1,8 +1,8 @@
-import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import React from 'react'
+import {Text, StyleSheet, View} from 'react-native'
 
 const ScreenTemplate = () => {
-    return <Text>Screen</Text>
+  return <Text>Screen</Text>
 }
 
 const styles = StyleSheet.create({})
