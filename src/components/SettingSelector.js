@@ -17,14 +17,13 @@ const SettingSelector = ({value, setValue, options}) => {
   return (
     <ScrollView horizontal={true}>
       {items.map(item => (
-        <TouchableOpacity onPress={() => setValue(options[item])}>
+        <TouchableOpacity onPress={() => setValue(options[item])} key={item}>
           <Text
             style={
               options[item] === value
                 ? selectedItemStyle
                 : styles.selectableItem
             }
-            key={item}
           >
             {options[item]}
           </Text>

@@ -27,6 +27,11 @@ const alignItemsOptions = {
   baseline: 'baseline',
 }
 
+const positionOptions = {
+  relative: 'relative', //default
+  absolute: 'absolute',
+}
+
 const BoxScreen = () => {
   const [direction, setDirection] = React.useState(flexDirectionsOptions.column)
   const [justify, setJustify] = React.useState(justifyContentsOptions.flexStart)
@@ -43,6 +48,11 @@ const BoxScreen = () => {
   const [alignSelfThree, setAlignSelfThree] = React.useState(
     alignItemsOptions.stretch,
   )
+  const [positionOne, setPositionOne] = React.useState(positionOptions.relative)
+  const [positionTwo, setPositionTwo] = React.useState(positionOptions.relative)
+  const [positionThree, setPositionThree] = React.useState(
+    positionOptions.relative,
+  )
 
   const styles = getStyles({
     direction,
@@ -54,6 +64,9 @@ const BoxScreen = () => {
     alignSelfOne,
     alignSelfTwo,
     alignSelfThree,
+    positionOne,
+    positionTwo,
+    positionThree,
   })
 
   return (
@@ -96,6 +109,22 @@ const BoxScreen = () => {
         setValue={setAlignSelfThree}
         options={alignItemsOptions}
       />
+      <Text>Position</Text>
+      <SettingSelector
+        value={positionOne}
+        setValue={setPositionOne}
+        options={positionOptions}
+      />
+      <SettingSelector
+        value={positionTwo}
+        setValue={setPositionTwo}
+        options={positionOptions}
+      />
+      <SettingSelector
+        value={positionThree}
+        setValue={setPositionThree}
+        options={positionOptions}
+      />
       <View style={styles.viewStyle}>
         <Text style={styles.textOneStyle}>Child #1 (Flex {flexOne})</Text>
         <Text style={styles.textTwoStyle}>Child #2 (Flex {flexTwo})</Text>
@@ -115,12 +144,15 @@ const getStyles = ({
   alignSelfOne,
   alignSelfTwo,
   alignSelfThree,
+  positionOne,
+  positionTwo,
+  positionThree,
 }) => {
   return {
     viewStyle: {
       borderWidth: 3,
       borderColor: 'black',
-      height: 450,
+      height: 300,
       flexDirection: direction,
       alignItems: align,
       justifyContent: justify,
@@ -130,18 +162,21 @@ const getStyles = ({
       borderColor: 'red',
       flex: flexOne,
       alignSelf: alignSelfOne,
+      position: positionOne,
     },
     textTwoStyle: {
       borderWidth: 3,
       borderColor: 'red',
       flex: flexTwo,
       alignSelf: alignSelfTwo,
+      position: positionTwo,
     },
     textThreeStyle: {
       borderWidth: 3,
       borderColor: 'red',
       flex: flexThree,
       alignSelf: alignSelfThree,
+      position: positionThree,
     },
   }
 }
